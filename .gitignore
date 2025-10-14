@@ -1,0 +1,25 @@
+# C++ build files
+cmake-build-debug/
+build/
+*.o
+*.out
+*.exe
+*.a
+*.so
+*.dylib
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
