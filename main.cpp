@@ -83,13 +83,31 @@ void print_dsa2_hw3_algorithms() {
     std::cout << "Choose an algorithm (0-10): ";
 }
 
+// ====== DSA2 HW4 menu ======
+void print_dsa2_hw4_algorithms() {
+    std::cout << "=== DSA2 HW4 ===\n";
+    std::cout << "1. Dijkstra\n";
+    std::cout << "2. Dijkstra with path reconstruction\n";
+    std::cout << "3. Fast Dijkstra\n";
+    std::cout << "4. Shortest path\n";
+    std::cout << "5. Alchemy Olympiad\n";
+    std::cout << "6. Buses in Vasyuki\n";
+    std::cout << "7. Riding City\n";
+    std::cout << "8. Transportation\n";
+    std::cout << "9. By Sled\n";
+    std::cout << "10. File manager\n";
+    std::cout << "0. Back to homeworks\n";
+    std::cout << "Choose an algorithm (0-10): ";
+}
+// ================================
+
 void print_not_implemented_message(int dsa_level, int hw_number) {
     std::cout << "\n=== DSA" << dsa_level << " HW" << hw_number << " ===\n";
     std::cout << "This homework is not implemented yet.\n";
     std::cout << "Check GitHub for updates: https://github.com/VladislavCherniavskii/DSA\n";
 }
 
-int main() {
+int transportation() {
     int dsa_choice = -1;
     int hw_choice = -1;
     int algo_choice = -1;
@@ -306,7 +324,74 @@ int main() {
                         std::cin.get();
                     }
                 }
-            } else {
+            }
+            // ====== DSA2 HW4 handling ======
+            else if (dsa_choice == 2 && hw_choice == 4) {
+                algo_choice = -1;
+                while (algo_choice != 0) {
+                    print_dsa2_hw4_algorithms();
+                    std::cin >> algo_choice;
+
+                    switch (algo_choice) {
+                        case 1:
+                            std::cout << "\n=== Dijkstra ===\n";
+                            dijkstra();
+                            break;
+                        case 2:
+                            std::cout << "\n=== Dijkstra with path reconstruction ===\n";
+                            dijkstra_with_path_reconstruction();
+                            break;
+                        case 3:
+                            std::cout << "\n=== Fast Dijkstra ===\n";
+                            fast_dijkstra();
+                            break;
+                        case 4:
+                            std::cout << "\n=== Shortest Path ===\n";
+                            shortest_path();
+                            break;
+                        case 5:
+                            std::cout << "\n=== Alchemy Olympiad ===\n";
+                            alchemy_olympiad();
+                            break;
+                        case 6:
+                            std::cout << "\n=== Buses in Vasyuki ===\n";
+                            buses_in_vasyuki();
+                            break;
+                        case 7:
+                            std::cout << "\n=== Riding City ===\n";
+                            riding_city();
+                            break;
+                        case 8:
+                            std::cout << "\n=== Transportation ===\n";
+                            // вызов переименованной функции
+                            conveyance();
+                            break;
+                        case 9:
+                            std::cout << "\n=== By Sled ===\n";
+                            by_sled();
+                            break;
+                        case 10:
+                            std::cout << "\n=== File manager ===\n";
+                            file_manager();
+                            break;
+                        case 0:
+                            std::cout << "Returning to homeworks...\n";
+                            break;
+                        default:
+                            std::cout << "Invalid algorithm choice! Please try again.\n";
+                            break;
+                    }
+
+                    if (algo_choice != 0) {
+                        std::cout << "\nPress Enter to continue...";
+                        std::cin.ignore();
+                        std::cin.get();
+                    }
+                }
+            }
+            // =======================================
+
+            else {
                 print_not_implemented_message(dsa_choice, hw_choice);
             }
 
@@ -319,4 +404,8 @@ int main() {
     }
 
     return 0;
+}
+
+int main() {
+    return transportation();
 }

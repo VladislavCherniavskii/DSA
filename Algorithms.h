@@ -34,4 +34,15 @@ void max_pourings();
 void tsar_leonid_tractor();
 void robots();
 
+void dijkstra();
+void dijkstra_with_path_reconstruction();
+void fast_dijkstra();
+void shortest_path();
+void alchemy_olympiad();
+void buses_in_vasyuki();
+void riding_city();
+void conveyance();
+void by_sled();
+void file_manager();
+
 #endif
