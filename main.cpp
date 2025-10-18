@@ -101,6 +101,24 @@ void print_dsa2_hw4_algorithms() {
 }
 // ================================
 
+// ====== DSA2 HW5 menu ======
+void print_dsa2_hw5_algorithms() {
+    std::cout << "=== DSA2 HW5 ===\n";
+    std::cout << "A. Transitive Closure\n";
+    std::cout << "B. Is there a cycle?\n";
+    std::cout << "C. Floyd\n";
+    std::cout << "D. Dangerous Route\n";
+    std::cout << "E. The Longest Path\n";
+    std::cout << "F. Pink Floyd\n";
+    std::cout << "G. Ford-Bellman\n";
+    std::cout << "H. Timed Flights\n";
+    std::cout << "I. Negative Weight Cycle\n";
+    std::cout << "J. Labyrinth of Knowledge\n";
+    std::cout << "0. Back to homeworks\n";
+    std::cout << "Choose an algorithm (0-10): ";
+}
+// =================================
+
 void print_not_implemented_message(int dsa_level, int hw_number) {
     std::cout << "\n=== DSA" << dsa_level << " HW" << hw_number << " ===\n";
     std::cout << "This homework is not implemented yet.\n";
@@ -389,6 +407,71 @@ int transportation() {
                     }
                 }
             }
+            // ====== DSA2 HW5 handling ======
+            else if (dsa_choice == 2 && hw_choice == 5) {
+                algo_choice = -1;
+                while (algo_choice != 0) {
+                    print_dsa2_hw5_algorithms();
+                    std::cin >> algo_choice;
+
+                    switch (algo_choice) {
+                        case 1:
+                            std::cout << "\n=== A. Transitive Closure ===\n";
+                            transitive_closure();
+                            break;
+                        case 2:
+                            std::cout << "\n=== B. Is there a cycle? ===\n";
+                            is_there_a_cycle();
+                            break;
+                        case 3:
+                            std::cout << "\n=== C. Floyd ===\n";
+                            floyd();
+                            break;
+                        case 4:
+                            std::cout << "\n=== D. Dangerous Route ===\n";
+                            dangerous_route();
+                            break;
+                        case 5:
+                            std::cout << "\n=== E. The Longest Path ===\n";
+                            the_longest_path();
+                            break;
+                        case 6:
+                            std::cout << "\n=== F. Pink Floyd ===\n";
+                            pink_floyd();
+                            break;
+                        case 7:
+                            std::cout << "\n=== G. Ford-Bellman ===\n";
+                            FordBellman();
+                            break;
+                        case 8:
+                            std::cout << "\n=== H. Timed Flights ===\n";
+                            timed_flights();
+                            break;
+                        case 9:
+                            std::cout << "\n=== I. Negative Weight Cycle ===\n";
+                            negative_weight_cycle();
+                            break;
+                        case 10:
+                            std::cout << "\n=== J. Labyrinth of Knowledge ===\n";
+                            labyrinth_of_knowledge();
+                            break;
+                        case 0:
+                            std::cout << "Returning to homeworks...\n";
+                            break;
+                        default:
+                            std::cout << "Invalid algorithm choice! Please try again.\n";
+                            break;
+                    }
+
+                    if (algo_choice != 0) {
+                        std::cout << "\nPress Enter to continue...";
+                        std::cin.ignore();
+                        std::cin.get();
+                    }
+                }
+            }
+            // =======================================
+
             // =======================================
 
             else {

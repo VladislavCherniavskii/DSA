@@ -45,4 +45,15 @@ void conveyance();
 void by_sled();
 void file_manager();
 
+void transitive_closure();
+void is_there_a_cycle();
+void floyd();
+void dangerous_route();
+void the_longest_path();
+void pink_floyd();
+void FordBellman();
+void timed_flights();
+void negative_weight_cycle();
+void labyrinth_of_knowledge();
+
 #endif
